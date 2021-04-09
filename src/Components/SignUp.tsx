@@ -1,17 +1,17 @@
-import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import { Field, Form, FormSpy } from 'react-final-form';
-import Typography from './modules/components/Typography';
-import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
-import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
-import withRoot from './modules/withRoot';
+import * as React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
+import { Field, Form, FormSpy } from "react-final-form";
+import Typography from "./modules/components/Typography";
+import AppFooter from "./modules/views/AppFooter";
+import AppAppBar from "./modules/views/AppAppBar";
+import AppForm from "./modules/views/AppForm";
+import { email, required } from "./modules/form/validation";
+import RFTextField from "./modules/form/RFTextField";
+import FormButton from "./modules/form/FormButton";
+import FormFeedback from "./modules/form/FormFeedback";
+import withRoot from "./modules/withRoot";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -31,7 +31,10 @@ function SignUp() {
   const [sent, setSent] = React.useState(false);
 
   const validate = (values: { [index: string]: string }) => {
-    const errors = required(['firstName', 'lastName', 'email', 'password'], values);
+    const errors = required(
+      ["firstName", "lastName", "email", "password"],
+      values
+    );
 
     if (!errors.email) {
       const emailError = email(values.email);
@@ -66,14 +69,14 @@ function SignUp() {
           subscription={{ submitting: true }}
           validate={validate}
         >
-          {({ handleSubmit: handleSubmit2, submitting }) => (
+          {({ handleSubmit: handleSubmit2 }) => (
             <form onSubmit={handleSubmit2} className={classes.form} noValidate>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Field
                     autoFocus
                     component={RFTextField}
-                    disabled={submitting || sent}
+                    // disabled={submitting || sent}
                     autoComplete="fname"
                     fullWidth
                     label="First name"
@@ -84,7 +87,7 @@ function SignUp() {
                 <Grid item xs={12} sm={6}>
                   <Field
                     component={RFTextField}
-                    disabled={submitting || sent}
+                    // disabled={submitting || sent}
                     autoComplete="lname"
                     fullWidth
                     label="Last name"
@@ -96,7 +99,7 @@ function SignUp() {
               <Field
                 autoComplete="email"
                 component={RFTextField}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 fullWidth
                 label="Email"
                 margin="normal"
@@ -106,7 +109,7 @@ function SignUp() {
               <Field
                 fullWidth
                 component={RFTextField}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 required
                 name="password"
                 autoComplete="current-password"
@@ -114,7 +117,7 @@ function SignUp() {
                 type="password"
                 margin="normal"
               />
-              <FormSpy subscription={{ submitError: true }}>
+              {/* <FormSpy subscription={{ submitError: true }}>
                 {({ submitError }) =>
                   submitError ? (
                     <FormFeedback className={classes.feedback} error>
@@ -122,14 +125,14 @@ function SignUp() {
                     </FormFeedback>
                   ) : null
                 }
-              </FormSpy>
+              </FormSpy> */}
               <FormButton
                 className={classes.button}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Sign Up'}
+                {"Sign Up"}
               </FormButton>
             </form>
           )}

@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { Field, Form, FormSpy } from 'react-final-form';
-import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
-import Typography from './modules/components/Typography';
-import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
-import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
-import withRoot from './modules/withRoot';
+import * as React from "react";
+import { Field, Form, FormSpy } from "react-final-form";
+import { makeStyles } from "@material-ui/core/styles";
+import Link from "@material-ui/core/Link";
+import Typography from "./modules/components/Typography";
+import AppFooter from "./modules/views/AppFooter";
+import AppAppBar from "./modules/views/AppAppBar";
+import AppForm from "./modules/views/AppForm";
+import { email, required } from "./modules/form/validation";
+import RFTextField from "./modules/form/RFTextField";
+import FormButton from "./modules/form/FormButton";
+import FormFeedback from "./modules/form/FormFeedback";
+import withRoot from "./modules/withRoot";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -30,7 +30,7 @@ function SignIn() {
   const [sent, setSent] = React.useState(false);
 
   const validate = (values: { [index: string]: string }) => {
-    const errors = required(['email', 'password'], values);
+    const errors = required(["email", "password"], values);
 
     if (!errors.email) {
       const emailError = email(values.email);
@@ -55,7 +55,7 @@ function SignIn() {
             Sign In
           </Typography>
           <Typography variant="body2" align="center">
-            {'Not a member yet? '}
+            {"Not a member yet? "}
             <Link
               href="/premium-themes/onepirate/sign-up/"
               align="center"
@@ -70,13 +70,13 @@ function SignIn() {
           subscription={{ submitting: true }}
           validate={validate}
         >
-          {({ handleSubmit: handleSubmit2, submitting }) => (
+          {({ handleSubmit: handleSubmit2 }) => (
             <form onSubmit={handleSubmit2} className={classes.form} noValidate>
               <Field
                 autoComplete="email"
                 autoFocus
                 component={RFTextField}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 fullWidth
                 label="Email"
                 margin="normal"
@@ -88,7 +88,7 @@ function SignIn() {
                 fullWidth
                 size="large"
                 component={RFTextField}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 required
                 name="password"
                 autoComplete="current-password"
@@ -96,7 +96,7 @@ function SignIn() {
                 type="password"
                 margin="normal"
               />
-              <FormSpy subscription={{ submitError: true }}>
+              {/* <FormSpy subscription={{ submitError: true }}>
                 {({ submitError }) =>
                   submitError ? (
                     <FormFeedback className={classes.feedback} error>
@@ -104,21 +104,24 @@ function SignIn() {
                     </FormFeedback>
                   ) : null
                 }
-              </FormSpy>
+              </FormSpy> */}
               <FormButton
                 className={classes.button}
-                disabled={submitting || sent}
+                // disabled={submitting || sent}
                 size="large"
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Sign In'}
+                {"Sign In"}
               </FormButton>
             </form>
           )}
         </Form>
         <Typography align="center">
-          <Link underline="always" href="/premium-themes/onepirate/forgot-password/">
+          <Link
+            underline="always"
+            href="/premium-themes/onepirate/forgot-password/"
+          >
             Forgot password?
           </Link>
         </Typography>
