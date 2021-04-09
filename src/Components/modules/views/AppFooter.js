@@ -11,7 +11,7 @@ function Copyright() {
     <React.Fragment>
       {'© '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        ESPUMOSIN
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -88,18 +88,6 @@ export default function AppFooter() {
               spacing={2}
             >
               <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
-                  <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
-                    alt="Facebook"
-                  />
-                </a>
-                <a href="https://twitter.com/MaterialUI" className={classes.icon}>
-                  <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
-                    alt="Twitter"
-                  />
-                </a>
               </Grid>
               <Grid item>
                 <Copyright />
@@ -112,32 +100,34 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                <Link href="/premium-themes/onepirate/terms/">Terminos</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                <Link href="/premium-themes/onepirate/privacy/">Privacidad</Link>
               </li>
             </ul>
           </Grid>
           <Grid item xs={6} sm={8} md={4}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Language
+              Proyecto Aplicado al Diseño y Tecnología
             </Typography>
-            <TextField
-              size="medium"
-              select
-              SelectProps={{
-                native: true,
-              }}
-              className={classes.language}
-              variant="standard"
-            >
-              {LANGUAGES.map((language) => (
-                <option value={language.code} key={language.code}>
-                  {language.name}
-                </option>
-              ))}
-            </TextField>
+            <ul className={classes.list}>
+              <li className={classes.listItem}>
+                <Link href="/premium-themes/onepirate/terms/">Natalia García Legorreta</Link>
+              </li>
+              <li className={classes.listItem}>
+                <Link href="/premium-themes/onepirate/privacy/">Diego Colin Pichardo</Link>
+              </li>
+              <li className={classes.listItem}>
+                <Link href="/premium-themes/onepirate/privacy/">Emiliano Balseira Martínez</Link>
+              </li>
+              <li className={classes.listItem}>
+                <Link href="/premium-themes/onepirate/privacy/">Eduardo Franco Ortega</Link>
+              </li>
+              <li className={classes.listItem}>
+                <Link href="/premium-themes/onepirate/privacy/">Hiram Magallán Sánchez</Link>
+              </li>
+            </ul>
           </Grid>
           <Grid item>
             <Typography variant="caption">
