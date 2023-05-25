@@ -29,7 +29,12 @@ const styles = (theme) => ({
     padding: theme.spacing(0, 5),
   },
   title: {
-    marginBottom: theme.spacing(14),
+  },
+  marginBottom: {
+    marginBottom: '3rem'
+  },
+  unorderedList: {
+    listStyleType: 'none'
   },
   number: {
     fontSize: 24,
@@ -73,47 +78,58 @@ function ProductHowItWorks(props) {
           className={classes.title}
           component="h2"
         >
-          ¿Qué harémos al respecto?
+          VIP X-PERIENCE PACKAGE
         </Typography>
+        <p className={classes.marginBottom}>(CUPO LIMITADO A 30 INVITACIONES)</p>
+
         <div>
-          <Grid container spacing={5}>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
               <div className={classes.item}>
-                <div className={classes.number}>1.</div>
-                <img
-                  src={creacion}
-                  alt="suitcase"
-                  className={classes.image}
-                />
+                <div className={classes.number}>VENTAJAS</div>
                 <Typography variant="h5" align="center">
-                  Nuestro producto se desarrollará a cargo de un comité de ingenieros para crear el contenedor más eficiente y que pueda ser reutilizable, en el proceso de elaboración es muy simple únicamente tenemos que generar la pasta de jabón y verter en el molde para su proceso de secado y reutilizado.
+                <ul className={classes.unorderedList}>
+                  <li>Reservación con mesa</li>
+                  <li>Boleto físico laminado</li>
+                  <li>BLUE GALACTIC SUPERNOVA (Bebida Xclusiva)</li>
+                  <li>Acceso media hora antes del evento.</li>
+                </ul>
                 </Typography>
               </div>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <div className={classes.item}>
-                <div className={classes.number}>2.</div>
-                <img
-                  src={produccion}
-                  alt="graph"
-                  className={classes.image}
-                />
+                <div className={classes.number}>LUGARES EXCLUSIVOS</div>
+                
                 <Typography variant="h5" align="center">
-                  Calculamos para la primera fase una creación de 5 mil contenedores un costo de materia prima de 10 pesos por contenedor y se basará en unas 5 personas trabajando para poder modelar todo y crearlo, para esto terminaremos la producción en 1 mes aproximadamente con un sueldo base de 8 mil pesos mensuales al trabajador más el resto seria tasa variable por si el consumidor quisiera otra cosa.
+                <p>MERCH LE CHIQUE DE LA PELUCA AZUL</p>
+                <ul className={classes.unorderedList}>
+                  <li>Postales</li>
+                  <li>Pines</li>
+                </ul>
                 </Typography>
               </div>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={12}>
               <div className={classes.item}>
-                <div className={classes.number}>3.</div>
-                <img
-                  src={espumosin}
-                  alt="clock"
-                  className={classes.image}
-                />
+                <div className={classes.number}>CUPONERA DE PATROCINADORES</div>
                 <Typography variant="h5" align="center">
-                  {' Con este producto proponemos una solución para resolver este gran problema de nuestro planeta, el exceso de basura y las consecuencias que esta lleva a nuestro planeta.'}
-                </Typography>
+                <ul className={classes.unorderedList}>
+                  <li>CRIOLLO METEPEC COCINA DE BARRIO 10% DE DESCUENTO (consumo a la carta)</li>
+                  <li>CASA JERONIMO DECORACIÓN Y DISEÑO 10% DE DESCUENTO</li>
+                  <li>ALFREDO ROSSANO ACUPUNTURA, SALUD Y BELLEZA 15% DE DESCUENTO</li>
+                  <li>ANTONIO NAILS & HAIR 10% DE DESCUENTO</li>
+                  <li>OH LA LA NAILS 10% DE DESCUENTO</li>
+                  <li>JOSH SALVATORE FOTOGRAFÍA 10% DE DESCUENTO</li>
+                  <li>FISIOTERAPIA JOSE CARLOS GARCIA 2x1</li>
+                  <li>X-TREME GYM 2X1 EN INSCRIPCIÓN</li>
+                  <li>LA COMEGALLETAS 2X1 PEDIDOS DE GALLETAS PERSONALIZADAS</li>
+                  <li>TATTOO STUDIO AL CUADRADO 2X1 EN TATTOOS</li>
+                  <li>CHRIS TATTOOARTE 2X1 EN TATTOOS</li>
+                  <li>BREAKPOINT ACADEMIA DE BAILE 2X1 EN INSCRIPCIÓN Y 1ER MENSUALIDAD EN CLASES DE RITMOS LATINOS, HIPHOP, VOGUING, SEX SIREN, CONTEMPORANEO, EXPRESIÓN CORPORAL, TEATRO.</li>
+                  <li>NUTRIOLOGO 2X1 CONSULTA DE VALORACIÓN Y PLANES DE ALIMENTACIÓN</li>
+                </ul>                
+            </Typography>
               </div>
             </Grid>
           </Grid>
@@ -126,7 +142,7 @@ function ProductHowItWorks(props) {
           component="a"
           href="/premium-themes/onepirate/sign-up/"
         >
-          Consigue el tuyo ya!
+          CONSIGUE TUS PREVENTAS YA!
         </Button>
       </Container>
     </section>
